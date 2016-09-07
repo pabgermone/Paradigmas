@@ -1,13 +1,23 @@
 package Ejercicio6;
 
+/**
+ * @author Pablo Germone
+ */
 public class Reales {
-    double x = 0, y = 0, z = 0;
+    double x, y, z;
 
+    /**
+     * Toma tres numeros reales y los oredena de menor a mayor
+     * @param a Primer numero
+     * @param b Segundo numero
+     * @param c Tercer numero
+     * @return String que muestra el orden de los numeros
+     */
     public String ordenar(double a, double b, double c){
-
         if(a < b){
             if (a < c){
                 if(b < c){
+
                     x = a;
                     y = b;
                     z = c;

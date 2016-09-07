@@ -1,28 +1,32 @@
 package Ejercicio2;
 
+/**
+ * @author Pablo Germone
+ */
 public class Numero {
-    int num;
+    int valor;
 
-    public Numero(int num){
-        this.num = num;
-    }
-
+    /**
+     * Indica cual es el digito mayor de Numero
+     *
+     * @return Digito mayor
+     */
     public int digitoMayor(){
-        int m = 0;
-        int n = num;
-        int d;
+        int max = 0;
+        int num = valor;
+        int digito;
 
-        while(n/10 > 0){
-            d = n%10;
+        while(num != 0){
+            digito = num % 10;
 
-            if(d > m){
-                m = d;
+            if(digito > max){
+                max = digito;
             }
 
-            n = n/10;
+            num = num/10;
         }
 
-        return m;
+        return max;
     }
 }
 
