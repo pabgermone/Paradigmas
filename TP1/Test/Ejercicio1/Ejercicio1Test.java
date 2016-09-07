@@ -8,6 +8,7 @@ import static org.junit.Assert.*;
 public class Ejercicio1Test {
     Recta recta;
 
+
     @Before
     public void setUp(){
         recta = new Recta();
@@ -24,4 +25,3 @@ public class Ejercicio1Test {
     }
 
 }
-
