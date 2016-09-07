@@ -1,7 +1,15 @@
 package Ejercicio2;
 
+/**
+ * @author Pablo Germone
+ */
 public class Par {
 
+    /**
+     * Devuelve el entero con la mayor cantidad de digitos pares
+     * @param numeros Array con los numero a comparar
+     * @return Entero con mayor cantidad de digitos pares
+     */
     public int mayorCantidadPares(int[] numeros){
         int digito;
         int num;

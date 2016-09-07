@@ -3,7 +3,9 @@ package Ejercicio3;
 import java.util.Random;
 import java.util.Scanner;
 
-
+/**
+ * @author Pablo Germone
+ */
 public class PiedraPapelTijeras {
 
     public static void main(String[] args){
