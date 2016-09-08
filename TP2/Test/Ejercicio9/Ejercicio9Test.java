@@ -21,7 +21,7 @@ public class Ejercicio9Test {
     public void mergeArchivos() throws Exception {
         List<String> respuesta = new ArrayList<>();
 
-        merge.mergeArchivos("d:\\Paradigmas_TP2_Archivo1.txt", "d:\\Paradigmas_TP2_Archivo2.txt");
+        merge.mergeArchivos("d:\\Paradigmas_TP2_Archivo1.txt", "d:\\Paradigmas_TP2_Archivo2.txt", "d:\\Paradigmas_TP2_Merge.txt");
 
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader("d:\\Paradigmas_TP2_Merge.txt"));
