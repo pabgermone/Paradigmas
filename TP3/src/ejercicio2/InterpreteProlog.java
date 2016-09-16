@@ -42,7 +42,11 @@ public class InterpreteProlog {
     }
 
 
-
+    /**
+     * Lee el archivo que contiene los hechos del programa
+     * @param direccion Direccion del archivo
+     * @return Devuelve una matriz con los hechos
+     */
     private static String[][] getHechos(String direccion){
         List<String> contenido = new ArrayList<>();
         String[][] hechosDir;
@@ -87,7 +91,12 @@ public class InterpreteProlog {
     }
 
 
-
+    /**
+     * Revisa que una persona sea hermana de la otra
+     * @param nombre1 Nombre de la primer persona
+     * @param nombre2 Nombre de la segunda persona
+     * @return Devuelve un boolean indicando si son hermanos
+     */
     private static boolean esHermano(String nombre1, String nombre2){
 
         if(existe(nombre1) && existe(nombre2)){
@@ -102,7 +111,12 @@ public class InterpreteProlog {
         }
     }
 
-
+    /**
+     * Revisa que una persona sea abuelo de otra
+     * @param nombre1 Nombre de la primer persona
+     * @param nombre2 Nombre de la segunda persona
+     * @return Devuelve un boolean indicando si la primer persona es abuelo de la segunda
+     */
     private static boolean esAbuelo(String nombre1, String nombre2){
         String padre;
         String madre;
@@ -127,7 +141,11 @@ public class InterpreteProlog {
     }
 
 
-
+    /**
+     * Encuentra el nombre del padre de una persona
+     * @param nombre Nombre del hijo
+     * @return Devuelve el nombre del padre
+     */
     private static String getPadre(String nombre){
         String padre = "";
 
@@ -140,7 +158,11 @@ public class InterpreteProlog {
         return padre;
     }
 
-
+    /**
+     * Encuentra el nombre de la madre de una persona
+     * @param nombre Nombre del hijo
+     * @return Devuelve el nombre de la madre
+     */
     private static String getMadre(String nombre){
         String madre = "";
 
@@ -154,7 +176,11 @@ public class InterpreteProlog {
     }
 
 
-
+    /**
+     * Revisa que el nombre aparezca, al menos una vez, en la base de hechos
+     * @param nombre Nombre a buscar
+     * @return Devuelve un boolean indicando si existe en la base
+     */
     private static boolean existe(String nombre){
         boolean existe = false;
 
