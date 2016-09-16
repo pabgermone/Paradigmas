@@ -15,8 +15,6 @@ public class Expresion{
      * @return Devuelve un boolean indicando si la expresion esta balanceada
      */
     public boolean esBalanceada(String exp){
-        Character signo;
-
         for(int i = 0; i < exp.length(); i++){
             Character aux = exp.charAt(i);
 
