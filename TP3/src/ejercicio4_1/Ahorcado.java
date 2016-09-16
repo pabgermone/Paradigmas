@@ -25,11 +25,11 @@ public class Ahorcado {
     }
 
 
-
-
+    /**
+     *  Contiene toda la logica del juego
+     * @param palabra Es la palabra qe debe adivinar el jugador
+     */
     private static void jugar(String palabra){
-        //int l = 1;
-
         int intentos = 5;
         boolean valido;
         boolean completo = false;
@@ -85,11 +85,23 @@ public class Ahorcado {
     }
 
 
+    /**
+     * Cambia el "-" en la palabra adivinada por la letra que fue ingresada por el usuario
+     * @param palabra String en el que se quiere reemplazar la letra
+     * @param reemplazo Letra con la que se quiere reemplazar
+     * @param index Posicion de la letra que se quiere reemplazar
+     * @return Devuelve el String con la letra reemplazada
+     */
     private static String reemplazar(String palabra, String reemplazo, int index){
         return palabra.substring(0, index) + reemplazo + palabra.substring((index + 1));
     }
 
 
+    /**
+     * Revisa que la palabra haya sido adivinada por completo
+     * @param palabra String que contiene las letras que se adivinaron hasta el momento
+     * @return Devuelve un boolean indicando si la palabra fue adivinada completamente
+     */
     private static boolean revisar(String palabra){
         int letras = 0;
 
@@ -103,7 +115,11 @@ public class Ahorcado {
     }
 
 
-
+    /**
+     * Lee el archivo y crea un HashMap con las palabras que puede elegir el programa
+     * @param archivo Direccion del archivo que contiene las palabras
+     * @return Devuelve el HashMap con las palabras
+     */
     private static Map<Integer, String> obtenerPalabras(String archivo){
         Map<Integer, String> mapa = new HashMap<>();
 
