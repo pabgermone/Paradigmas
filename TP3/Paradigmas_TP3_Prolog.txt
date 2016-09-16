@@ -1,0 +1,6 @@
+padre(Marcelo,Pablo)
+madre(Alejandra,Pablo)
+padre(Marcelo,Melisa)
+madre(Alejandra,Melisa)
+padre(Domingo,Alejandra)
+madre(Ana,Marcelo)
