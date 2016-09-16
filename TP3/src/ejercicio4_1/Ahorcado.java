@@ -10,12 +10,16 @@ import java.util.*;
  * @author Pablo Germone
  */
 public class Ahorcado {
+    private static Scanner scanner = new Scanner(System.in);
+
 
     public static void main(String[] args){
+
         int random = new Random().nextInt(5);
 
         Map<Integer, String> palabras = obtenerPalabras("d:\\Paradigmas_TP3_Ahorcado.txt");
         String palabra = palabras.get(random);
+
 
         jugar(palabra);
     }
@@ -23,50 +27,84 @@ public class Ahorcado {
 
 
 
-    public static void jugar(String palabra){
-        int l = 1;
-        int c = 0;
+    private static void jugar(String palabra){
+        //int l = 1;
+
         int intentos = 5;
+        boolean valido;
+        boolean completo = false;
 
         String descubierto = "";
-        Character letra = ' ';
+        String letra;
 
-        Scanner scanner = new Scanner(System.in);
 
         for(int i = 0; i < palabra.length(); i++){
             descubierto += "-";
         }
 
-        while(intentos != 0){
+        while((intentos != 0) && (!completo)){
             System.out.println("Intentos restantes: " + intentos);
             System.out.println(descubierto);
             System.out.println("Elija una letra: ");
 
-            while(l == 1){
-                if(scanner.next().length() == 1){
-                    if(Character.isLetter(scanner.next().charAt(0))){
-                        letra = scanner.next().charAt(0);
-                        l = 0;
-                    }else{
+            do{
+                letra = scanner.next();
+
+                if(letra.length() == 1){
+                    if(!Character.isLetter(letra.charAt(0))) {
                         System.out.println("Elija una LETRA: ");
                     }
                 }else{
                     System.out.print("Elija UNA letra: ");
                 }
-            }
+            }while((!Character.isLetter(letra.charAt(0))) || (letra.length() != 1));
 
+            valido = false;
 
             for(int i = 0; i < palabra.length(); i++){
-                if(Character.compare(letra, palabra.charAt(i)) == 0){
-
+                if(letra.compareTo(palabra.substring(i, (i + 1))) == 0){
+                    descubierto = reemplazar(descubierto, letra, i);
+                    valido = true;
                 }
             }
+
+            if(revisar(descubierto)){
+                completo = true;
+            }else if(!valido){
+                intentos--;
+            }
+        }
+
+        System.out.println(descubierto);
+
+        if(intentos == 0){
+            System.out.println("Perdiste:, la palabra era " + palabra);
+        }else{
+            System.out.println("Ganaste!!");
         }
     }
 
 
+    private static String reemplazar(String palabra, String reemplazo, int index){
+        return palabra.substring(0, index) + reemplazo + palabra.substring((index + 1));
+    }
 
-    public static Map<Integer, String> obtenerPalabras(String archivo){
+
+    private static boolean revisar(String palabra){
+        int letras = 0;
+
+        for(int i = 0; i < palabra.length(); i++){
+            if(Character.isLetter(palabra.charAt(i))){
+                letras++;
+            }
+        }
+
+        return palabra.length() == letras;
+    }
+
+
+
+    private static Map<Integer, String> obtenerPalabras(String archivo){
         Map<Integer, String> mapa = new HashMap<>();
 
         List<String> contenido = new ArrayList<>();
