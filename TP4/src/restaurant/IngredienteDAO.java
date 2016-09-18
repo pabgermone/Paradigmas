@@ -1,6 +1,7 @@
 package restaurant;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,6 +60,27 @@ public class IngredienteDAO {
         }
     }
 
+    /**
+     * Lista todos los ingredientes
+     * @return Devuelve una lista que contiene el nombre de todos los ingredientes
+     */
+    public static List<String> devolverIngredientes(){
+        List<String> ingredientes = new ArrayList<>();
+
+        try{
+            ResultSet resultSet = BD.getResultSet("SELECT INGREDIENTE_NOMBRE FROM INGREDIENTE");
+
+            while(resultSet.next()){
+                ingredientes.add(resultSet.getString("INGREDIENTE_NOMBRE"));
+            }
+
+            return ingredientes;
+
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
 
     /**
      * Lista todas las verduras de la base
@@ -77,6 +99,22 @@ public class IngredienteDAO {
             return ingredientes;
 
         }catch (Exception e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    /**
+     * Devuelve el ID de un ingrediente
+     * @param nombre Nombre del ingrediente del que se quiere el ID
+     * @return Devuelve el ID del ingrediente
+     */
+    public static Integer getID(String nombre){
+        try{
+            ResultSet resultSet = BD.getResultSet("SELECT INGREDIENTE_ID FROM INGREDIENTE WHERE INGREDIENTE_NOMBRE LIKE '" + nombre + "';");
+            resultSet.next();
+            return resultSet.getInt(1);
+        }catch (SQLException e){
             System.out.println(e.getMessage());
             return null;
         }
