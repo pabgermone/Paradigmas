@@ -6,7 +6,6 @@ import java.sql.*;
  * @author Pablo Germone
  */
 public class BD {
-    private static String connectionString = "jdbc:h2:D:/paradigmas/restaurant;AUTO_SERVER=TRUE";
 
     /**
      * Ejecuta un SELET sobre la BD
@@ -17,7 +16,7 @@ public class BD {
         try{
             Class.forName("org.h2.Driver");
 
-            Connection con = DriverManager.getConnection(connectionString);
+            Connection con = DriverManager.getConnection("jdbc:h2:D:/paradigmas/restaurant", "sa", "");
             Statement statement = con.createStatement();
 
             return statement.executeQuery(command);
@@ -38,10 +37,13 @@ public class BD {
         try{
             Class.forName("org.h2.Driver");
 
-            Connection con = DriverManager.getConnection(connectionString);
+            Connection con = DriverManager.getConnection("jdbc:h2:D:/paradigmas/restaurant", "sa", "");
             Statement statement = con.createStatement();
 
             statement.executeUpdate(command);
+
+            statement.close();
+            con.close();
 
         }catch(ClassNotFoundException e){
             System.out.println(e.getMessage());
@@ -59,21 +61,40 @@ public class BD {
         try{
             Class.forName("org.h2.Driver");
 
-            Connection con = DriverManager.getConnection(connectionString);
+            Connection con = DriverManager.getConnection("jdbc:h2:D:/paradigmas/restaurant", "sa", "");
             Statement statement = con.createStatement();
 
-            ResultSet resultSet = statement.executeQuery("SELECT IS NULL(MAX(" + nombreTabla.toLowerCase() + "_id), 0) "
-                                                       + "FROM " + nombreTabla + ";");
+            ResultSet resultSet = statement.executeQuery("SELECT ISNULL(MAX(" + nombreTabla.toUpperCase() + "_ID), 0) "
+                                                       + "FROM " + nombreTabla.toUpperCase() + ";");
 
             resultSet.next();
-            return resultSet.getInt(nombreTabla.toLowerCase() + "_id");
+            return resultSet.getInt(1);
 
         }catch(ClassNotFoundException e){
             System.out.println(e.getMessage());
             return null;
-        }catch(SQLException e){
+        }catch(SQLException e) {
             System.out.println(e.getMessage());
             return null;
+        }
+    }
+
+    public static void clear(String nombreTabla){
+        try{
+            Class.forName("org.h2.Driver");
+
+            Connection con = DriverManager.getConnection("jdbc:h2:D:/paradigmas/restaurant", "sa", "");
+            Statement statement = con.createStatement();
+
+            statement.executeUpdate("DELETE FROM " + nombreTabla.toUpperCase() + " WHERE " + nombreTabla.toUpperCase() + "_ID >= 0;");
+
+            statement.close();
+            con.close();
+
+        }catch(ClassNotFoundException e){
+            System.out.println(e.getMessage());
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
         }
     }
 }
