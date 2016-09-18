@@ -6,7 +6,7 @@ import java.sql.*;
  * @author Pablo Germone
  */
 public class BD {
-    String connectionString = "jdbc:h2:D:/paradigmas/restaurant;AUTO_SERVER=TRUE";
+    private String connectionString = "jdbc:h2:D:/paradigmas/restaurant;AUTO_SERVER=TRUE";
 
     /**
      * Ejecuta un SELET sobre la BD
