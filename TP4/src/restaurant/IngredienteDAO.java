@@ -9,6 +9,11 @@ import java.util.List;
  */
 public class IngredienteDAO {
 
+    /**
+     * Da de alta a un ingrediente en la base
+     * @param nombre Nombre del ingrediente
+     * @param tipo Tipo del ingrediente
+     */
     public static void altaIngrediente(String nombre, String tipo){
         try{
             int id = BD.getUltimoID("INGREDIENTE") + 1;
@@ -22,6 +27,10 @@ public class IngredienteDAO {
     }
 
 
+    /**
+     * Quita de la base a todos los ingredientes con el nombre indicado
+     * @param nombre Nombre del ingrediente
+     */
     public static void borrarIngrediente(String nombre){
         try{
             BD.update("DELETE FROM INGREDIENTE WHERE INGREDIENTE_NOMBRE LIKE '" + nombre + "';");
@@ -32,6 +41,12 @@ public class IngredienteDAO {
     }
 
 
+    /**
+     * Modifica el nombre y tipo de un ingrediente
+     * @param nombreViejo Nombre del ingrediente a modificar
+     * @param nombreNuevo Nuevo nombre para el ingrediente
+     * @param tipoNuevo Nuevo tipo para el ingrediente
+     */
     public static void modificarIngrediente(String nombreViejo, String nombreNuevo, String tipoNuevo){
         try{
             BD.update("UPDATE INGREDIENTE "
@@ -45,6 +60,10 @@ public class IngredienteDAO {
     }
 
 
+    /**
+     * Lista todas las verduras de la base
+     * @return Devuelve la lista con los ingredientes que tengan tipo verdura
+     */
     public static List<String> devolverVerduras(){
         List<String> ingredientes = new ArrayList<>();
 
