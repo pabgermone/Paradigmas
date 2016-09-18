@@ -62,7 +62,8 @@ public class BD {
             Connection con = DriverManager.getConnection(connectionString);
             Statement statement = con.createStatement();
 
-            ResultSet resultSet = statement.executeQuery("SELECT IS NULL(MAX(" + nombreTabla.toLowerCase() + "_id), 0) FROM " + nombreTabla);
+            ResultSet resultSet = statement.executeQuery("SELECT IS NULL(MAX(" + nombreTabla.toLowerCase() + "_id), 0) "
+                                                       + "FROM " + nombreTabla + ";");
 
             resultSet.next();
             return resultSet.getInt(nombreTabla.toLowerCase() + "_id");
