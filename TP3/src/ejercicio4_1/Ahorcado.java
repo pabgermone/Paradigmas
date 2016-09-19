@@ -46,21 +46,17 @@ public class Ahorcado {
         while((intentos != 0) && (!completo)){
             System.out.println("Intentos restantes: " + intentos);
             System.out.println(descubierto);
-            System.out.println("Elija una letra o arriegue una palabra: ");
+            System.out.println("Elija una letra o arriesgue una palabra: ");
 
-            //do{
-                letra = scanner.next();
+            letra = scanner.next();
 
-                if(letra.length() == 1){
-                    if(!Character.isLetter(letra.charAt(0))) {
-                        System.out.println("Elija una LETRA: ");
-                    }
-                }else if(letra.length() > 1){
-                    arriesgado = letra;
-                }else{
-                    System.out.print("Elija una letra o palabra: ");
+            if(letra.length() == 1){
+                if(!Character.isLetter(letra.charAt(0))) {
+                    System.out.println("Elija una LETRA o PALABRA: ");
                 }
-            //}while((!Character.isLetter(letra.charAt(0))) || (arriesgado.compareTo("") == 0));
+            }else if(letra.length() > 1){
+                arriesgado = letra;
+            }
 
             valido = false;
 
