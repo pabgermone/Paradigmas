@@ -28,11 +28,12 @@ public class BebidaDAO {
 
 
     /**
-     * Elimina una bebida de la base
+     * Elimina una bebida de la base junto con sus relaciones con promocion
      * @param nombre Nombre de la bebida a eliminar
      * @param tamano Tamaño de la bebida a eliminar
      */
     public static void borrarBebida(String nombre, int tamano){
+        PromocionBebidaDAO.borrarPorBebida(getID(nombre, tamano));
         BD.update("DELETE FROM BEBIDA WHERE BEBIDA_NOMBRE LIKE '" + nombre + "';");
     }
 
@@ -85,7 +86,7 @@ public class BebidaDAO {
     public static Integer getID(String nombre, int tamano){
         try{
             ResultSet resultSet = BD.getResultSet("SELECT BEBIDA_ID FROM BEBIDA" +
-                                                  " WHERE BEBIDA_NOMBRE LIKE '" + nombre + "AND BEBIDA_TAMANO = " + tamano + ";");
+                                                  " WHERE BEBIDA_NOMBRE LIKE '" + nombre + "' AND BEBIDA_TAMANO = " + tamano + ";");
             resultSet.next();
             return resultSet.getInt(1);
 

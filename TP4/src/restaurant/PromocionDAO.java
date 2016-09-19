@@ -13,23 +13,28 @@ public class PromocionDAO {
     /**
      * Da de alta una nueva promocion en la base
      * @param nombre Nombre de la promocion
-     * @param plato Nombre del plato
-     * @param bebida Nombre de la bebida (y tamaño)
+     * @param platos Nombres de los platos
+     * @param bebidas Nombres y tamaños de las bebidas
      * @param precio Precio de la promocion
      */
-    public static void altaPromocion(String nombre, String plato, String bebida, double precio){
+    public static void altaPromocion(String nombre, List<String> platos, List<String> bebidas, double precio){
         int id = BD.getUltimoID("PROMOCION") + 1;
-
-        String[] datosBebida = bebida.split("\\s");
-        int bebidaID = BebidaDAO.getID(datosBebida[0], Integer.parseInt(datosBebida[1]));
-        int platoID = PlatoDAO.getID(plato);
 
         BD.update("INSERT INTO PROMOCION VALUES(" +
                    id + ", '" +
                   nombre + "', " +
-                  platoID + ", " +
-                  bebidaID + ", " +
                   precio + ");");
+
+        for(String bebida : bebidas){
+            String[] datosBebida = bebida.split("\\s");
+            int bebidaID = BebidaDAO.getID(datosBebida[0], Integer.parseInt(datosBebida[1]));
+            PromocionBebidaDAO.altaPromocionBebida(id, bebidaID);
+        }
+
+        for(String plato : platos){
+            int platoID = PlatoDAO.getID(plato);
+            PromocionPlatoDAO.altaPromocionPlato(id, platoID);
+        }
     }
 
 
@@ -38,6 +43,8 @@ public class PromocionDAO {
      * @param nombre Nombre de la promocion a eliminar
      */
     public static void borrarPromocion(String nombre){
+        PromocionBebidaDAO.borrarPorPromocion(getID(nombre));
+        PromocionPlatoDAO.borrarPorPromocion(getID(nombre));
         BD.update("DELETE FROM PROMOCION WHERE PROMOCION_NOMBRE LIKE '" + nombre + "';");
     }
 
@@ -71,6 +78,24 @@ public class PromocionDAO {
             }
 
             return promociones;
+
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+
+    /**
+     * Devuelve el ID de una promocion
+     * @param nombre Nombre de la promocion de la que se queire el ID
+     * @return ID de la promocion
+     */
+    public static Integer getID(String nombre){
+        try{
+            ResultSet resultSet = BD.getResultSet("SELECT PROMOCION_ID FROM PROMOCION WHERE PROMOCION_NOMBRE LIKE '" + nombre + "';");
+            resultSet.next();
+            return resultSet.getInt(1);
 
         }catch(SQLException e){
             System.out.println(e.getMessage());
