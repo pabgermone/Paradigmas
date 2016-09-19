@@ -66,7 +66,7 @@ public class IngredienteDAO {
      * @return Devuelve una lista que contiene el nombre de todos los ingredientes
      */
     public static List<String> devolverIngredientes(){
-        List<String> ingredientes = new ArrayList<>();
+        List<String> ingredientes = new ArrayList<String>();
 
         try{
             ResultSet resultSet = BD.getResultSet("SELECT INGREDIENTE_NOMBRE FROM INGREDIENTE");
@@ -88,7 +88,7 @@ public class IngredienteDAO {
      * @return Devuelve la lista con los ingredientes que tengan tipo verdura
      */
     public static List<String> devolverVerduras(){
-        List<String> ingredientes = new ArrayList<>();
+        List<String> ingredientes = new ArrayList<String>();
 
         try{
             ResultSet resultSet = BD.getResultSet("SELECT INGREDIENTE_NOMBRE FROM INGREDIENTE WHERE INGREDIENTE_TIPO LIKE 'Verdura';");

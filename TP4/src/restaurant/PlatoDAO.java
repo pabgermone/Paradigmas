@@ -60,7 +60,7 @@ public class PlatoDAO{
      * @return Devuelve una lista con todos los platos
      */
     public static List<String> devolverPlatos(){
-        List<String> platos = new ArrayList<>();
+        List<String> platos = new ArrayList<String>();
 
         try{
             ResultSet resultSet = BD.getResultSet("SELECT PLATO_NOMBRE FROM PLATO");

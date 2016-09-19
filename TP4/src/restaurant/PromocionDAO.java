@@ -68,7 +68,7 @@ public class PromocionDAO {
      * @return Devuelve una lista con los nombres de todas las promociones
      */
     public static List<String> devolverPromociones(){
-        List<String> promociones = new ArrayList<>();
+        List<String> promociones = new ArrayList<String>();
 
         try{
             ResultSet resultSet = BD.getResultSet("SELECT PROMOCION_NOMBRE FROM PROMOCION;");

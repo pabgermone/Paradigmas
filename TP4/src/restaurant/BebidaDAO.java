@@ -59,7 +59,7 @@ public class BebidaDAO {
      * @return Devuelve una lista con todas las bebidas
      */
     public static List<String> devolverBebidas(){
-        List<String> bebidas = new ArrayList<>();
+        List<String> bebidas = new ArrayList<String>();
 
         try{
             ResultSet resultSet = BD.getResultSet("SELECT BEBIDA_NOMBRE, BEBIDA_TAMANO FROM BEBIDA;");
