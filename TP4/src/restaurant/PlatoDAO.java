@@ -17,7 +17,7 @@ public class PlatoDAO{
      * @param ingredientes Lista de ingredientes necesarios para el plato
      */
     public static void altaPlato(String nombre, double precio, List<String> ingredientes){
-        int idPlato = BD.getUltimoID("PLATO" + 1);
+        int idPlato = BD.getUltimoID("PLATO") + 1;
         int idIngrediente;
 
         BD.update("INSERT INTO PLATO VALUES( " +
@@ -51,7 +51,7 @@ public class PlatoDAO{
         BD.update("UPDATE PLATO SET " +
                   "PLATO_NOMBRE = '" + nombreNuevo + "', " +
                   "PLATO_PRECIO = " + precioNuevo +
-                  " WHERE PRECIO_NOMBRE LIKE '" + nombreViejo + ";");
+                  " WHERE PLATO_NOMBRE LIKE '" + nombreViejo + "';");
     }
 
 

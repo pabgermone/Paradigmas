@@ -34,6 +34,7 @@ public class IngredienteDAO {
      */
     public static void borrarIngrediente(String nombre){
         try{
+            IngredientePlatoDAO.borrarPorIngrediente(getID(nombre));
             BD.update("DELETE FROM INGREDIENTE WHERE INGREDIENTE_NOMBRE LIKE '" + nombre + "';");
 
         }catch(Exception e){

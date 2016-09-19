@@ -20,6 +20,15 @@ public class IngredientePlatoDAO {
      * @param idPlato ID del plato del que se quieren eliminar las relaciones
      */
     public static void borrarPorPlato(int idPlato){
-        BD.update("DELETE FROM INGREDIENTE PLATO WHERE INGREDIENTEPLATO_PLATO_ID = " + idPlato);
+        BD.update("DELETE FROM INGREDIENTEPLATO WHERE INGREDIENTEPLATO_PLATO_ID = " + idPlato);
+    }
+
+
+    /**
+     * Quita todas las relaciones de un ingrediente
+     * @param idIngrediente ID del ingrediente del que se quieren eliminar las relaciones
+     */
+    public static void borrarPorIngrediente(int idIngrediente){
+        BD.update("DELETE FROM INGREDIENTEPLATO WHERE INGREDIENTEPLATO_INGREDIENTE_ID = " + idIngrediente + ";");
     }
 }

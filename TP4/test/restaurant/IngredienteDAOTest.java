@@ -23,7 +23,7 @@ public class IngredienteDAOTest {
     public void setUp() throws Exception {
         IngredienteDAO.altaIngrediente("Papa", "Verdura");
         IngredienteDAO.altaIngrediente("CarneParaMilanesa", "Carne");
-        IngredienteDAO.altaIngrediente("PanRayado", "Otros");
+        IngredienteDAO.altaIngrediente("PanRallado", "Otros");
         IngredienteDAO.altaIngrediente("Huevo", "Otros");
         IngredienteDAO.altaIngrediente("Lechuga", "Verdura");
         IngredienteDAO.altaIngrediente("Tomate", "Verdura");
