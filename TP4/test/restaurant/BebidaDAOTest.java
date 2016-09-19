@@ -85,7 +85,7 @@ public class BebidaDAOTest {
 
     @Test
     public void testDevolverBebidas() throws Exception {
-        List<String> esperado = new ArrayList<>();
+        List<String> esperado = new ArrayList<String>();
         esperado.add("CervezaStella 1000");
         esperado.add("CervezaStella 330");
         esperado.add("CocaCola 600");

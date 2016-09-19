@@ -25,17 +25,17 @@ public class PlatoDAOTest {
         IngredienteDAO.altaIngrediente("Salsa", "Otros");
         IngredienteDAO.altaIngrediente("Cebolla", "Verdura");
 
-        List<String> ingredientesMilanesa = new ArrayList<>();
+        List<String> ingredientesMilanesa = new ArrayList<String>();
         ingredientesMilanesa.add("CarneParaMilanesa");
         ingredientesMilanesa.add("PanRallado");
         ingredientesMilanesa.add("Huevo");
 
-        List<String> ingredientesEnsalada = new ArrayList<>();
+        List<String> ingredientesEnsalada = new ArrayList<String>();
         ingredientesEnsalada.add("Lechuga");
         ingredientesEnsalada.add("Tomate");
         ingredientesEnsalada.add("Cebolla");
 
-        List<String> ingredientesFideos = new ArrayList<>();
+        List<String> ingredientesFideos = new ArrayList<String>();
         ingredientesFideos.add("Fideos");
         ingredientesEnsalada.add("Salsa");
 
@@ -118,7 +118,7 @@ public class PlatoDAOTest {
 
     @Test
     public void testListarPlatos() throws Exception{
-        List<String> esperado = new ArrayList<>();
+        List<String> esperado = new ArrayList<String>();
         esperado.add("Milanesa");
         esperado.add("EnsaladaMixta");
         esperado.add("FideosConSalsa");

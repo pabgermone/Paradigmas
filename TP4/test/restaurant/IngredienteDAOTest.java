@@ -106,7 +106,7 @@ public class IngredienteDAOTest {
 
     @Test
     public void testDevolverVerduras() throws Exception{
-        List<String> esperado = new ArrayList<>();
+        List<String> esperado = new ArrayList<String>();
         esperado.add("Papa");
         esperado.add("Lechuga");
         esperado.add("Tomate");

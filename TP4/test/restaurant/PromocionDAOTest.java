@@ -27,17 +27,17 @@ public class PromocionDAOTest {
         IngredienteDAO.altaIngrediente("Salsa", "Otros");
 
 
-        List<String> ingredientesMilanesa = new ArrayList<>();
+        List<String> ingredientesMilanesa = new ArrayList<String>();
         ingredientesMilanesa.add("CarneParaMilanesa");
         ingredientesMilanesa.add("PanRallado");
         ingredientesMilanesa.add("Huevo");
 
-        List<String> ingredientesEnsalada = new ArrayList<>();
+        List<String> ingredientesEnsalada = new ArrayList<String>();
         ingredientesEnsalada.add("Lechuga");
         ingredientesEnsalada.add("Tomate");
         ingredientesEnsalada.add("Cebolla");
 
-        List<String> ingredientesFideos = new ArrayList<>();
+        List<String> ingredientesFideos = new ArrayList<String>();
         ingredientesFideos.add("Fideos");
         ingredientesEnsalada.add("Salsa");
 
@@ -47,11 +47,11 @@ public class PromocionDAOTest {
         PlatoDAO.altaPlato("FideosConSalsa", 70, ingredientesFideos);
 
 
-        List<String> platosPromo1 = new ArrayList<>();
+        List<String> platosPromo1 = new ArrayList<String>();
         platosPromo1.add("Milanesa");
         platosPromo1.add("EnsaladaMixta");
 
-        List<String> platosPromo2 = new ArrayList<>();
+        List<String> platosPromo2 = new ArrayList<String>();
         platosPromo2.add("FideosConSalsa");
 
 
@@ -59,10 +59,10 @@ public class PromocionDAOTest {
         BebidaDAO.altaBebida("CervezaStella", 330, 40);
 
 
-        List<String> bebidasPromo1 = new ArrayList<>();
+        List<String> bebidasPromo1 = new ArrayList<String>();
         bebidasPromo1.add("AguaSinGas 500");
 
-        List<String> bebidasPromo2 = new ArrayList<>();
+        List<String> bebidasPromo2 = new ArrayList<String>();
         bebidasPromo2.add("CervezaStella 330");
 
 
@@ -88,11 +88,11 @@ public class PromocionDAOTest {
 
     @Test
     public void testAltaPromocion() throws Exception {
-        List<String> platosPromo3 = new ArrayList<>();
+        List<String> platosPromo3 = new ArrayList<String>();
         platosPromo3.add("Milanesa");
         platosPromo3.add("FideosConSalsa");
 
-        List<String> bebidasPromo3 = new ArrayList<>();
+        List<String> bebidasPromo3 = new ArrayList<String>();
         bebidasPromo3.add("AguaSinGas 500");
         bebidasPromo3.add("CervezaStella 330");
 
@@ -143,7 +143,7 @@ public class PromocionDAOTest {
 
     @Test
     public void testDevolverPromociones() throws Exception{
-        List<String> esperado = new ArrayList<>();
+        List<String> esperado = new ArrayList<String>();
         esperado.add("MilaConEnsalada");
         esperado.add("FideosConBebida");
 
