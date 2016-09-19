@@ -1,0 +1,99 @@
+2016-09-18 17:21:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT ISNULL(MAX(ingrediente_id), 0) FROM INGREDIENTE; [42102-192]
+2016-09-18 17:21:41 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT ISNULL(MAX(ingrediente_id), 0) FROM INGREDIENTE; [42102-192]
+2016-09-18 17:21:41 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT ISNULL(MAX(ingrediente_id), 0) FROM INGREDIENTE; [42102-192]
+2016-09-18 17:21:41 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT ISNULL(MAX(ingrediente_id), 0) FROM INGREDIENTE; [42102-192]
+2016-09-18 17:21:41 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT ISNULL(MAX(ingrediente_id), 0) FROM INGREDIENTE; [42102-192]
+2016-09-18 17:21:41 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT ISNULL(MAX(ingrediente_id), 0) FROM INGREDIENTE; [42102-192]
+2016-09-18 17:21:41 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT ISNULL(MAX(ingrediente_id), 0) FROM INGREDIENTE; [42102-192]
+2016-09-18 17:21:41 jdbc[10]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT ISNULL(MAX(ingrediente_id), 0) FROM INGREDIENTE; [42102-192]
+2016-09-18 17:21:41 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT ISNULL(MAX(ingrediente_id), 0) FROM INGREDIENTE; [42102-192]
+2016-09-18 17:21:41 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT COUNT(ingrediente_id) FROM Ingrediente [42102-192]
+2016-09-18 17:21:41 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTEWHERE" not found; SQL statement:
+DELETE FROM IngredienteWHERE ingrediente_id >= 0; [42102-192]
+2016-09-18 17:33:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT ISNULL(MAX(INGREDIENTE_ID), 0) FROM INGREDIENTE; [42102-192]
+2016-09-18 17:33:02 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT ISNULL(MAX(INGREDIENTE_ID), 0) FROM INGREDIENTE; [42102-192]
+2016-09-18 17:33:02 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT ISNULL(MAX(INGREDIENTE_ID), 0) FROM INGREDIENTE; [42102-192]
+2016-09-18 17:33:02 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT ISNULL(MAX(INGREDIENTE_ID), 0) FROM INGREDIENTE; [42102-192]
+2016-09-18 17:33:02 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT ISNULL(MAX(INGREDIENTE_ID), 0) FROM INGREDIENTE; [42102-192]
+2016-09-18 17:33:02 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT ISNULL(MAX(INGREDIENTE_ID), 0) FROM INGREDIENTE; [42102-192]
+2016-09-18 17:33:02 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT ISNULL(MAX(INGREDIENTE_ID), 0) FROM INGREDIENTE; [42102-192]
+2016-09-18 17:33:02 jdbc[10]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT ISNULL(MAX(INGREDIENTE_ID), 0) FROM INGREDIENTE; [42102-192]
+2016-09-18 17:33:02 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT ISNULL(MAX(INGREDIENTE_ID), 0) FROM INGREDIENTE; [42102-192]
+2016-09-18 17:33:02 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT COUNT(ingrediente_id) FROM Ingrediente [42102-192]
+2016-09-18 17:33:02 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTEWHERE" not found; SQL statement:
+DELETE FROM IngredienteWHERE ingrediente_id >= 0; [42102-192]
+2016-09-18 17:45:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT ISNULL(MAX(INGREDIENTE_ID), 0) FROM INGREDIENTE; [42102-192]
+2016-09-18 17:45:24 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT ISNULL(MAX(INGREDIENTE_ID), 0) FROM INGREDIENTE; [42102-192]
+2016-09-18 17:45:24 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT ISNULL(MAX(INGREDIENTE_ID), 0) FROM INGREDIENTE; [42102-192]
+2016-09-18 17:45:24 jdbc[6]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT ISNULL(MAX(INGREDIENTE_ID), 0) FROM INGREDIENTE; [42102-192]
+2016-09-18 17:45:24 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT ISNULL(MAX(INGREDIENTE_ID), 0) FROM INGREDIENTE; [42102-192]
+2016-09-18 17:45:24 jdbc[8]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT ISNULL(MAX(INGREDIENTE_ID), 0) FROM INGREDIENTE; [42102-192]
+2016-09-18 17:45:24 jdbc[9]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT ISNULL(MAX(INGREDIENTE_ID), 0) FROM INGREDIENTE; [42102-192]
+2016-09-18 17:45:24 jdbc[10]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT ISNULL(MAX(INGREDIENTE_ID), 0) FROM INGREDIENTE; [42102-192]
+2016-09-18 17:45:24 jdbc[11]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT ISNULL(MAX(INGREDIENTE_ID), 0) FROM INGREDIENTE; [42102-192]
+2016-09-18 17:45:24 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTE" not found; SQL statement:
+SELECT COUNT(ingrediente_id) FROM Ingrediente [42102-192]
+2016-09-18 17:45:24 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLException: Table "INGREDIENTEWHERE" not found; SQL statement:
+DELETE FROM IngredienteWHERE ingrediente_id >= 0; [42102-192]
