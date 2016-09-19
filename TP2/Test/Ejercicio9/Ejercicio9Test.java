@@ -19,7 +19,7 @@ public class Ejercicio9Test {
 
     @Test
     public void mergeArchivos() throws Exception {
-        List<String> respuesta = new ArrayList<>();
+        List<String> respuesta = new ArrayList<String>();
 
         merge.mergeArchivos("d:\\Paradigmas_TP2_Archivo1.txt", "d:\\Paradigmas_TP2_Archivo2.txt", "d:\\Paradigmas_TP2_Merge.txt");
 

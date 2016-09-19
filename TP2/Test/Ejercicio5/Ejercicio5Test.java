@@ -16,7 +16,7 @@ public class Ejercicio5Test {
     Clasificador clasif;
 
     public int[] leerNumeros(String archivo){
-        List<Integer> listaNumeros = new ArrayList<>();
+        List<Integer> listaNumeros = new ArrayList<Integer>();
 
         String contenido = "";
         String[] strNumeros;
@@ -26,7 +26,7 @@ public class Ejercicio5Test {
 
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(archivo));
-            String line = "";// = bufferedReader.readLine();
+            String line = "";
 
             while (line != null) {
                 line = bufferedReader.readLine();
@@ -121,7 +121,7 @@ public class Ejercicio5Test {
 
     @Test
     public void promedio() throws Exception {
-        List<Integer> lista = new ArrayList<>();
+        List<Integer> lista = new ArrayList<Integer>();
         lista.add(2);
         lista.add(4);
 

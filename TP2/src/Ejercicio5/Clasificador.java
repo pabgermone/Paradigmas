@@ -19,8 +19,8 @@ public class Clasificador {
         String numDivisores = "";
         String promedios;
 
-        List<Integer> pares = new ArrayList<>();
-        List<Integer> impares = new ArrayList<>();
+        List<Integer> pares = new ArrayList<Integer>();
+        List<Integer> impares = new ArrayList<Integer>();
 
 
         for(int i = 0; i < numeros.length; i++){

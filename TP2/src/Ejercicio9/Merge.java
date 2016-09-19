@@ -20,7 +20,7 @@ public class Merge {
     public void mergeArchivos(String dir1, String dir2, String dir3){
         Map<String, String> archivo1 = leerArchivo(dir1);
         Map<String, String> archivo2 = leerArchivo(dir2);
-        Map<String, String> archivo3 = new HashMap<>();
+        Map<String, String> archivo3 = new HashMap<String, String>();
 
         String value;
 
@@ -44,9 +44,9 @@ public class Merge {
      * @return Map con el contenido del archivo
      */
     public Map<String, String> leerArchivo(String direccion){
-        Map<String, String> archivo = new HashMap<>();
+        Map<String, String> archivo = new HashMap<String, String>();
 
-        List<String> contenido = new ArrayList<>();
+        List<String> contenido = new ArrayList<String>();
         String[] palabras;
 
         try {
