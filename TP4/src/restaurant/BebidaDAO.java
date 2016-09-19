@@ -74,4 +74,24 @@ public class BebidaDAO {
             return null;
         }
     }
+
+
+    /**
+     * Devuelve el ID de una bebida
+     * @param nombre Nombre de la bebida de la que se quiere el ID
+     * @param tamano Tamaño de la bebida de la que se quiere el ID
+     * @return
+     */
+    public static Integer getID(String nombre, int tamano){
+        try{
+            ResultSet resultSet = BD.getResultSet("SELECT BEBIDA_ID FROM BEBIDA" +
+                                                  " WHERE BEBIDA_NOMBRE LIKE '" + nombre + "AND BEBIDA_TAMANO = " + tamano + ";");
+            resultSet.next();
+            return resultSet.getInt(1);
+
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
 }
