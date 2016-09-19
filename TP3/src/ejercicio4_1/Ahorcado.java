@@ -36,6 +36,7 @@ public class Ahorcado {
 
         String descubierto = "";
         String letra;
+        String arriesgado = "";
 
 
         for(int i = 0; i < palabra.length(); i++){
@@ -45,37 +46,45 @@ public class Ahorcado {
         while((intentos != 0) && (!completo)){
             System.out.println("Intentos restantes: " + intentos);
             System.out.println(descubierto);
-            System.out.println("Elija una letra: ");
+            System.out.println("Elija una letra o arriegue una palabra: ");
 
-            do{
+            //do{
                 letra = scanner.next();
 
                 if(letra.length() == 1){
                     if(!Character.isLetter(letra.charAt(0))) {
                         System.out.println("Elija una LETRA: ");
                     }
+                }else if(letra.length() > 1){
+                    arriesgado = letra;
                 }else{
-                    System.out.print("Elija UNA letra: ");
+                    System.out.print("Elija una letra o palabra: ");
                 }
-            }while((!Character.isLetter(letra.charAt(0))) || (letra.length() != 1));
+            //}while((!Character.isLetter(letra.charAt(0))) || (arriesgado.compareTo("") == 0));
 
             valido = false;
 
-            for(int i = 0; i < palabra.length(); i++){
-                if(letra.compareTo(palabra.substring(i, (i + 1))) == 0){
-                    descubierto = reemplazar(descubierto, letra, i);
-                    valido = true;
+            if(arriesgado.compareTo("") != 0){
+                if(!compararPalabra(palabra, arriesgado)){
+                    intentos = 0;
+                }else{
+                    completo = true;
+                }
+            }else{
+                for(int i = 0; i < palabra.length(); i++){
+                    if(letra.compareTo(palabra.substring(i, (i + 1))) == 0){
+                        descubierto = reemplazar(descubierto, letra, i);
+                        valido = true;
+                    }
+                }
+
+                if(revisar(descubierto)){
+                    completo = true;
+                }else if(!valido){
+                    intentos--;
                 }
             }
-
-            if(revisar(descubierto)){
-                completo = true;
-            }else if(!valido){
-                intentos--;
-            }
         }
-
-        System.out.println(descubierto);
 
         if(intentos == 0){
             System.out.println("Perdiste:, la palabra era " + palabra);
@@ -112,6 +121,21 @@ public class Ahorcado {
         }
 
         return palabra.length() == letras;
+    }
+
+
+    /**
+     * Compara la palabra ariesgada por el usuario con la palabra elegida por el programa
+     * @param palabra Palabra elegida por el programa
+     * @param arriesgado Palabra arriesgada por el usuario
+     * @return Boolean indicando si las palabras son correctas
+     */
+    private static boolean compararPalabra(String palabra, String arriesgado){
+        if(palabra.compareTo(arriesgado) == 0){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 
