@@ -48,7 +48,7 @@ public class InterpreteProlog {
      * @return Devuelve una matriz con los hechos
      */
     private static String[][] getHechos(String direccion){
-        List<String> contenido = new ArrayList<>();
+        List<String> contenido = new ArrayList<String>();
         String[][] hechosDir;
         String[] split;
         String line;
@@ -192,38 +192,4 @@ public class InterpreteProlog {
 
         return existe;
     }
-
-
-
-
-
-    /*
-    public Map<Integer, String> leerHechos(String direccion){
-        Map<Integer, String> hechos = new HashMap<>();
-        int key = 0;
-
-        String line;
-
-        try{
-            BufferedReader bufferedReader = new BufferedReader(new FileReader(direccion));
-
-            do{
-                line = bufferedReader.readLine();
-
-                if(line != null){
-                    hechos.put(key, line);
-                    key++;
-                }
-            }while(line != null);
-
-        }catch(FileNotFoundException e){
-            System.out.println(e.getMessage());
-            return null;
-        }catch(IOException e){
-            System.out.println(e.getMessage());
-            return null;
-        }
-
-        return hechos;
-    }*/
 }

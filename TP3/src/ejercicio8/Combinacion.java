@@ -14,7 +14,7 @@ public class Combinacion {
      * @return Devuelve el array con todas las combinaciones
      */
     public String[] getCombinaciones(int cantidadLetras){
-        List<String> combinaciones = new ArrayList<>();
+        List<String> combinaciones = new ArrayList<String>();
         combinar(cantidadLetras, "", combinaciones);
         String[] combs = new String[combinaciones.size()];
 

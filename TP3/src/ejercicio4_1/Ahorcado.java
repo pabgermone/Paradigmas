@@ -141,9 +141,9 @@ public class Ahorcado {
      * @return Devuelve el HashMap con las palabras
      */
     private static Map<Integer, String> obtenerPalabras(String archivo){
-        Map<Integer, String> mapa = new HashMap<>();
+        Map<Integer, String> mapa = new HashMap<Integer, String>();
 
-        List<String> contenido = new ArrayList<>();
+        List<String> contenido = new ArrayList<String>();
         String[] palabras;
 
         try {

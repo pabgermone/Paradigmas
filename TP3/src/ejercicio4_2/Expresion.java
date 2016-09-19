@@ -7,7 +7,7 @@ import java.util.List;
  * @author Pablo Germone
  */
 public class Expresion{
-    private List<Character> pila = new ArrayList<>();
+    private List<Character> pila = new ArrayList<Character>();
 
     /**
      * Revisa que la expresion ingresada este balanceada

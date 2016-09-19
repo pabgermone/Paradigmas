@@ -34,7 +34,7 @@ public class Matriz {
      * @return Devuelve la matriz de numeros como tipo int[][]
      */
     public int[][] leerMatriz(String direccion){
-        List<String> filas = new ArrayList<>();
+        List<String> filas = new ArrayList<String>();
         int[][] matriz;
         String line;
 
