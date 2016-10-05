@@ -55,6 +55,7 @@ public class Plato {
 
     public void setCocinero(Cocinero cocinero) {
         this.cocinero = cocinero;
+        this.cocinero.agregarPlato(this);
     }
 
 

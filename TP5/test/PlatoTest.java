@@ -96,4 +96,11 @@ public class PlatoTest {
 
         assertEquals(plato.imprimir().compareTo("Milanesas con Papas Fritas(5 puntos) - asd@gmail.com"), 0);
     }
+
+    @Test
+    public void testSetCocinero() throws Exception {
+        plato.setCocinero(cocinero);
+
+        assertEquals(cocinero.getPlatos().size(), 1);
+    }
 }

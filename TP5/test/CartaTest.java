@@ -37,14 +37,18 @@ public class CartaTest {
     public void precioPromedio() throws Exception {
         Plato plato = new Plato("asd", 3);
 
-        carta  .agregarPlato(plato);
+        carta.agregarPlato(plato);
 
         assertEquals(carta.precioPromedio().intValue(), 6);
     }
 
     @Test
     public void platoConMejorOpinion() throws Exception {
+        Plato plato = new Plato("milanesas", 1);
+        plato.agregarOpinion(5);
 
+        carta.agregarPlato(plato);
+
+        assertEquals(carta.platoConMejorOpinion().getNombre().compareTo("milanesas"), 0);
     }
-
 }
