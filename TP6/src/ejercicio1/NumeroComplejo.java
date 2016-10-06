@@ -41,7 +41,7 @@ public class NumeroComplejo {
      * Separa el String de la parte imaginaria, quedandose solo con el valor numerico
      */
     private void setValorImaginario() {
-        String[] imaginario = getParteImaginaria().split("[0-9]");
+        String[] imaginario = getParteImaginaria().split("i");
         valorImaginario = Integer.parseInt(imaginario[0]);
     }
 
@@ -49,9 +49,16 @@ public class NumeroComplejo {
      * Toma las partes del numero complejo y las asigna a las propiedades correspondientes
      */
     private void setPartes(){
-        String[] partes = getValor().split("//s");
+        String[] partes = getValor().split("\\s");
+
         this.parteReal = Integer.parseInt(partes[0]);
-        this.parteImaginaria = partes[2];
+
+        if(partes[1].compareTo("-") == 0){
+            this.parteImaginaria = "-" + partes[2];
+        }else{
+            this.parteImaginaria = partes[2];
+        }
+
         setValorImaginario();
     }
 
@@ -70,7 +77,7 @@ public class NumeroComplejo {
         respuestaImaginaria = this.getValorImaginario() + numero.getValorImaginario();
 
         if(respuestaImaginaria < 0){
-            respuesta = respuestaReal + " " + respuestaImaginaria + "i";
+            respuesta = respuestaReal + " - " + respuestaImaginaria * -1 + "i";
         }else{
             respuesta = respuestaReal + " + " + respuestaImaginaria + "i";
         }
@@ -93,7 +100,7 @@ public class NumeroComplejo {
         respuestaImaginaria = this.getValorImaginario() - numero.getValorImaginario();
 
         if(respuestaImaginaria < 0){
-            respuesta = respuestaReal + " " + respuestaImaginaria + "i";
+            respuesta = respuestaReal + " - " + respuestaImaginaria * -1 + "i";
         }else{
             respuesta = respuestaReal + " + " + respuestaImaginaria + "i";
         }
