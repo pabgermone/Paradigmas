@@ -85,6 +85,7 @@ public class Banco {
      */
     public void depositar(int numeroCuenta, double monto){
         Cuenta cuenta = obtenerCuenta(numeroCuenta);
+        cuenta.setSaldo(cuenta.getSaldo() + monto);
         cobrar(cuenta);
     }
 
@@ -96,9 +97,9 @@ public class Banco {
         Cliente propietario = cuenta.getPropietario();
 
         if(propietario.isVip() && propietario.isCapital()){
-            cuenta.setSaldo(cuenta.getSaldo() - 6);
-        }else if(!propietario.isVip()){
             cuenta.setSaldo(cuenta.getSaldo() - 2);
+        }else if(!propietario.isVip()){
+            cuenta.setSaldo(cuenta.getSaldo() - 6);
         }
     }
 
