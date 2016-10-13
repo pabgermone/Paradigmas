@@ -37,7 +37,7 @@ public class ContactManager {
      * @param apellido Apellido del contacto buscado
      * @return Contacto buscado
      */
-    private Contacto obtenerContacto(String nombre, String apellido){
+    public Contacto obtenerContacto(String nombre, String apellido){
         Contacto cont = null;
 
         for(Contacto contacto : getContactos()){
@@ -54,7 +54,7 @@ public class ContactManager {
      * @param nombre Nombre del grupo buscado
      * @return Grupo buscado
      */
-    private GrupoContactos obtenerGrupo(String nombre){
+    public GrupoContactos obtenerGrupo(String nombre){
         GrupoContactos grupo = null;
 
         for(GrupoContactos grupoContactos : getGrupos()){
@@ -73,13 +73,19 @@ public class ContactManager {
      * @param contacto Contacto a eliminar
      */
     public void eliminarContacto(Contacto contacto){
+        Contacto auxCont = null;
+        GrupoContactos auxGrupo = null;
+
         for(GrupoContactos grupo : grupos){
             for(Contacto cont : grupo.getContactos()){
                 if(cont == contacto){
-                    grupo.eliminarContacto(contacto);
+                    auxCont = cont;
+                    auxGrupo = grupo;
                 }
             }
         }
+
+        auxGrupo.eliminarContacto(auxCont);
 
         getContactos().remove(contacto);
     }
