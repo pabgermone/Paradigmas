@@ -9,15 +9,20 @@ import java.util.List;
 public class Cliente {
     private String nombre;
     private String apellido;
+    private int dni;
     private boolean vip = false;
     private boolean capital;
     private List<Cuenta> cuentas = new ArrayList<Cuenta>();
+    private int pin;
 
 
-    public Cliente(String nombre, String apellido, boolean capital){
+    public Cliente(String nombre, String apellido, int dni, boolean capital, boolean vip, Banco banco){
         setNombre(nombre);
         setApellido(apellido);
+        setDni(dni);
         setCapital(capital);
+        setVip(vip);
+        banco.agregarCliente(this);
     }
 
 
@@ -25,7 +30,7 @@ public class Cliente {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
+    private void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
@@ -33,8 +38,16 @@ public class Cliente {
         return apellido;
     }
 
-    public void setApellido(String apellido) {
+    private void setApellido(String apellido) {
         this.apellido = apellido;
+    }
+
+    public int getDni() {
+        return dni;
+    }
+
+    private void setDni(int dni) {
+        this.dni = dni;
     }
 
     public boolean isVip() {
@@ -57,6 +70,13 @@ public class Cliente {
         return cuentas;
     }
 
+    public int getPin() {
+        return pin;
+    }
+
+    public void setPin(int pin) {
+        this.pin = pin;
+    }
 
     /**
      * Asocia una cuenta al cliente

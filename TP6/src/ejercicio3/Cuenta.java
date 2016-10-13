@@ -8,10 +8,11 @@ public class Cuenta {
     private double saldo;
     private Cliente propietario;
 
-    public Cuenta(int numero, Cliente propietario){
+    public Cuenta(int numero, Cliente propietario, Banco banco){
         setNumero(numero);
         setPropietario(propietario);
         propietario.agregarCuenta(this);
+        banco.agregarCuenta(this);
     }
 
 
