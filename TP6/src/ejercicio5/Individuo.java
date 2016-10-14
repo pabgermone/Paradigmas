@@ -1,5 +1,6 @@
 package ejercicio5;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -34,5 +35,43 @@ public class Individuo {
                 random = null;
             }
         }
+    }
+
+
+    /**
+     * Compara el individuo actual con otro y devuelve una lista con todos los genes iguales
+     * @param individuo Individuo con el que se quiere comparar
+     * @return Lista con los genes comunes entre los dos individuos
+     */
+    public List<Gen> genesIguales(Individuo individuo){
+        List<Gen> iguales = new ArrayList<Gen>();
+        int contador;
+        boolean igual;
+
+        for(Gen gen : this.getGenes()){
+            for(Gen genComp : individuo.getGenes()){
+                igual = false;
+
+                if(gen.getLongitud() == genComp.getLongitud()){
+                    contador = gen.getLongitud();
+
+                    for(int i = 0; i < gen.getValorNucleotidos().size(); i++){
+                        if(gen.getValorNucleotidos().get(i).equals(genComp.getValorNucleotidos().get(i))){
+                            contador++;
+                        }
+                    }
+
+                    if(contador == gen.getLongitud()){
+                        igual = true;
+                    }
+                }
+
+                if(igual){
+                    iguales.add(gen);
+                }
+            }
+        }
+
+        return iguales;
     }
 }
