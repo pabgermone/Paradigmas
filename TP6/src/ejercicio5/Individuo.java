@@ -9,7 +9,7 @@ import java.util.Random;
  */
 public class Individuo {
     private Genoma genoma = Genoma.getInstancia();
-    private List<Gen> genes = genoma.getGenes();
+    private List<Gen> genes = genoma.copiarGenoma();
 
     public Individuo(){
         generarValores();
@@ -26,7 +26,7 @@ public class Individuo {
      */
     private void generarValores(){
         for(Gen gen : genes){
-            for(int i = 0; i <= gen.getLongitud(); i ++){
+            for(int i = 0; i < gen.getLongitud(); i ++){
                 Random random = new Random();
                 int valor = random.nextInt(11);
 
@@ -48,16 +48,21 @@ public class Individuo {
         int contador;
         boolean igual;
 
-        for(Gen gen : this.getGenes()){
-            for(Gen genComp : individuo.getGenes()){
-                igual = false;
+        for(int i = 0; i < this.getGenes().size(); i++){
+            Gen gen = this.getGenes().get(i);
+            igual = false;
+
+            int j = 0;
+
+            while(!igual && j < individuo.getGenes().size()){
+                Gen genComp = individuo.getGenes().get(j);
 
                 if(gen.getLongitud() == genComp.getLongitud()){
-                    contador = gen.getLongitud();
+                    contador = 0;
 
-                    for(int i = 0; i < gen.getValorNucleotidos().size(); i++){
-                        if(gen.getValorNucleotidos().get(i).equals(genComp.getValorNucleotidos().get(i))){
-                            contador++;
+                    for(int k = 0; k < gen.getLongitud(); k++){
+                        if(gen.getValorNucleotidos().get(k).equals(genComp.getValorNucleotidos().get(k))){
+                            contador ++;
                         }
                     }
 
@@ -66,9 +71,11 @@ public class Individuo {
                     }
                 }
 
-                if(igual){
-                    iguales.add(gen);
-                }
+                j++;
+            }
+
+            if(igual){
+                iguales.add(gen);
             }
         }
 

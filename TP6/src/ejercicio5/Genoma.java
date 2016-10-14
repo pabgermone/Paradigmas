@@ -25,7 +25,7 @@ public class Genoma {
     }
 
     private Genoma(){
-        for(int i = 0; i <= 25000; i++){
+        for(int i = 0; i < 25000; i++){
             idGen++;
             crearGen(idGen);
         }
@@ -33,11 +33,11 @@ public class Genoma {
 
 
 
-    public List<Gen> getGenes() {
+    private List<Gen> getGenes() {
         return genes;
     }
 
-    public void agregarGen(Gen gen){
+    private void agregarGen(Gen gen){
         getGenes().add(gen);
     }
 
@@ -47,7 +47,7 @@ public class Genoma {
      * Intstancia un gen y lo agrega a la lista de genes del genoma
      * @param id ID para cada gen
      */
-    public void crearGen(int id){
+    private void crearGen(int id){
         Random random = new Random();
         int longitud = random.nextInt(6) + 5;
 
@@ -55,5 +55,17 @@ public class Genoma {
 
         Gen gen = new Gen(id, longitud);
         agregarGen(gen);
+    }
+
+
+    public List<Gen> copiarGenoma(){
+        List<Gen> copiaGenes = new ArrayList<Gen>();
+
+        for(Gen gen : getGenes()){
+            Gen copia = new Gen(gen.getId(), gen.getLongitud());
+            copiaGenes.add(copia);
+        }
+
+        return copiaGenes;
     }
 }

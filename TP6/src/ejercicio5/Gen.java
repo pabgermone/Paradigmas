@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * @author Pablo Germone
  */
-public class Gen {
+public class Gen{
     private int longitud;
     private int id;
     private List<Integer> valorNucleotidos = new ArrayList<Integer>();
