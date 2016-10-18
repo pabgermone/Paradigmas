@@ -28,7 +28,7 @@ public class Individuo {
         for(Gen gen : genes){
             for(int i = 0; i < gen.getLongitud(); i ++){
                 Random random = new Random();
-                int valor = random.nextInt(11);
+                int valor = random.nextInt(5);
 
                 gen.agregarValor(valor);
 
