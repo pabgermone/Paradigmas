@@ -4,8 +4,8 @@ package ejercicio6;
  * @author Pablo Germone
  */
 public class Presentador extends Asistente{
-    public Presentador(String nombre, String apellido, Congreso congreso){
-        super(nombre, apellido, congreso);
+    public Presentador(String nombre, String apellido, String institucion, Congreso congreso){
+        super(nombre, apellido, institucion, congreso);
     }
 
     /**

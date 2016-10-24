@@ -7,8 +7,8 @@ public class Alumno extends Asistente{
     private int anho;
 
 
-    public Alumno(String nombre, String apellido, Congreso congreso, int anho){
-        super(nombre, apellido, congreso);
+    public Alumno(String nombre, String apellido, String institucion, Congreso congreso, int anho){
+        super(nombre, apellido, institucion, congreso);
 
         setAnho(anho);
     }

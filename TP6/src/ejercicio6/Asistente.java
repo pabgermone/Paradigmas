@@ -6,12 +6,14 @@ package ejercicio6;
 public abstract class Asistente{
     private String nombre;
     private String apellido;
+    private String institucion;
     private double descuento = 0;
     private Congreso congreso;
 
-    public Asistente(String nombre, String apellido, Congreso congreso){
+    public Asistente(String nombre, String apellido, String institucion, Congreso congreso){
         setNombre(nombre);
         setApellido(apellido);
+        setInstitucion(institucion);
         setCongreso(congreso);
 
         this.congreso.agregarAsistente(this);
@@ -32,6 +34,14 @@ public abstract class Asistente{
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
+    }
+
+    public String getInstitucion() {
+        return institucion;
+    }
+
+    public void setInstitucion(String institucion) {
+        this.institucion = institucion;
     }
 
     public double getDescuento() {
@@ -65,4 +75,9 @@ public abstract class Asistente{
      * @return Descuento a aplicar
      */
     public abstract double calcularDescuento();
+
+
+    public String crearCredencial(){
+        return getCongreso().getNombre() + "\n" + getNombre() + " " + getApellido() + "\n" + getInstitucion();
+    }
 }

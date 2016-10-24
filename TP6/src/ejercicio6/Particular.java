@@ -6,8 +6,8 @@ package ejercicio6;
 public class Particular extends Asistente{
     private String ciudadResidencia;
 
-    public Particular(String nombre, String apellido, Congreso congreso, String ciudad){
-        super(nombre, apellido, congreso);
+    public Particular(String nombre, String apellido, String institucion, Congreso congreso, String ciudad){
+        super(nombre, apellido, institucion, congreso);
         setCiudadResidencia(ciudad);
     }
 
