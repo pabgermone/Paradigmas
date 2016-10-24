@@ -21,6 +21,10 @@ public class Particular extends Asistente{
     }
 
 
+    /**
+     * Calcula el precio que debe descontarse del precio base
+     * @return Precio a descontar
+     */
     public double calcularDescuento(){
         if(getCiudadResidencia().compareTo("Buenos Aires") != 0){
             setDescuento(0.1);
