@@ -12,6 +12,12 @@ public class Congreso {
     private double precioBase;
 
 
+    public Congreso(String nombre, double precio){
+        setNombre(nombre);
+        setPrecioBase(precio);
+    }
+
+
     public String getNombre() {
         return nombre;
     }
