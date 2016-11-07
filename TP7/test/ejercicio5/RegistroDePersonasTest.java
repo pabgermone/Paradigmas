@@ -25,22 +25,15 @@ public class RegistroDePersonasTest {
 
     @Test
     public void retornarPersona() throws Exception {
-        Persona esperada = persona2 = new Persona("Maricel", "Gonzales", 30333666, "34 nro 567");
+        Persona persona = registro.recuperarPersona(30333666);
+
+        System.out.println(persona.getNombre() + " " + persona.getApellido() + " " + persona.getDni());
+
+        assertEquals(persona.getDni(), 30333666);
     }
 
     @Test
     public void cantidadPersonas() throws Exception {
         assertEquals(registro.cantidadPersonas(), 2);
     }
-
-    @Test
-    public void imprimirListaPersonas() throws Exception {
-
-    }
-
-    @Test
-    public void retornarPersonasDeMayorAMenor() throws Exception {
-
-    }
-
 }
