@@ -10,30 +10,26 @@ import java.util.Scanner;
  */
 public class JuegoDeLaSilla {
     private int cantidadSillas;
-    private List<String> jugadores;
+    private List<String> jugadores = new ArrayList<String>();
 
     private Scanner scanner = new Scanner(System.in);
 
-
+/**
     public JuegoDeLaSilla(int cantidadJugadores){
         setJugadores(cargarJugadores(cantidadJugadores));
         setCantidadSillas(cantidadJugadores - 1);
     }
-
+**/
 
     public List<String> getJugadores() {
         return jugadores;
-    }
-
-    private void setJugadores(List<String> jugadores) {
-        this.jugadores = jugadores;
     }
 
     public int getCantidadSillas() {
         return cantidadSillas;
     }
 
-    private void setCantidadSillas(int cantidadSillas) {
+    public void setCantidadSillas(int cantidadSillas) {
         this.cantidadSillas = cantidadSillas;
     }
 
@@ -66,13 +62,13 @@ public class JuegoDeLaSilla {
         String nombre;
         int ronda = 0;
 
-        while(getCantidadSillas() != 1){
+        while(getCantidadSillas() > 0){
             ronda++;
             Random segundos = new Random();
             Random jugador = new Random();
 
             tiempo = segundos.nextInt(31) * 1000;
-            nombre = getJugador(jugador.nextInt(getJugadores().size() + 1));
+            nombre = getJugador(jugador.nextInt(getJugadores().size()));
 
             System.out.println("*Musica*");
 
