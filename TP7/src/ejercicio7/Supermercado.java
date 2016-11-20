@@ -17,6 +17,7 @@ public class Supermercado {
         getCajas().add(caja);
     }
 
+
     public double liquidacionDelDia(){
         double total = 0;
 

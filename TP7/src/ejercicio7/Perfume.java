@@ -28,4 +28,9 @@ public class Perfume implements ProductoDeVenta{
         setNombre(nombre);
         setPrecio(precio);
     }
+
+
+    public void aplicarDescuento(){
+        setPrecio(getPrecioVenta() - getPrecioVenta()*0.7);
+    }
 }

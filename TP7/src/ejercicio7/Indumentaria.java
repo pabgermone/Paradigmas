@@ -48,4 +48,9 @@ public class Indumentaria implements ProductoDeVenta {
         setTalle(talle);
         setPrecio(precio);
     }
+
+
+    public void aplicarDescuento(){
+        setPrecio(getPrecioVenta() - getPrecioVenta()*0.7);
+    }
 }

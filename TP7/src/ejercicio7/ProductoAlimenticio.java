@@ -40,4 +40,8 @@ public abstract class ProductoAlimenticio implements ProductoDeVenta{
     public double getPrecioVenta(){
         return getPrecio() - (getPrecio() * getDescuento());
     }
+
+    public void aplicarDescuento(){
+        setPrecio(getPrecio() - getPrecio()*0.7);
+    }
 }
