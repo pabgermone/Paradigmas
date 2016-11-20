@@ -27,10 +27,24 @@ public class Individuo {
     private void generarValores(){
         for(Gen gen : genes){
             for(int i = 0; i < gen.getLongitud(); i ++){
+                String nucleotido = "";
                 Random random = new Random();
-                int valor = random.nextInt(5);
+                int valor = random.nextInt(4);
 
-                gen.agregarValor(valor);
+                switch(valor){
+                    case 0: nucleotido = "A";
+                            break;
+
+                    case 1: nucleotido = "C";
+                            break;
+
+                    case 2: nucleotido = "G";
+                            break;
+
+                    case 3: nucleotido = "T";
+                }
+
+                gen.agregarValor(nucleotido);
 
                 random = null;
             }

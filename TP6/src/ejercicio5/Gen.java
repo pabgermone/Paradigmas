@@ -9,7 +9,7 @@ import java.util.List;
 public class Gen{
     private int longitud;
     private int id;
-    private List<Integer> valorNucleotidos = new ArrayList<Integer>();
+    private List<String> valorNucleotidos = new ArrayList<String>();
 
     public Gen(int id, int longitud){
         setId(id);
@@ -33,11 +33,11 @@ public class Gen{
         this.id = id;
     }
 
-    public List<Integer> getValorNucleotidos() {
+    public List<String> getValorNucleotidos() {
         return valorNucleotidos;
     }
 
-    public void agregarValor(int valor){
+    public void agregarValor(String valor){
         getValorNucleotidos().add(valor);
     }
 }
