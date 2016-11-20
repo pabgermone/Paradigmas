@@ -10,18 +10,14 @@ public class Cliente {
     private String nombre;
     private String apellido;
     private int dni;
-    private boolean vip = false;
-    private boolean capital;
     private List<Cuenta> cuentas = new ArrayList<Cuenta>();
     private int pin;
 
 
-    public Cliente(String nombre, String apellido, int dni, boolean capital, boolean vip, Banco banco){
+    public Cliente(String nombre, String apellido, int dni, Banco banco){
         setNombre(nombre);
         setApellido(apellido);
         setDni(dni);
-        setCapital(capital);
-        setVip(vip);
         banco.agregarCliente(this);
     }
 
@@ -50,22 +46,6 @@ public class Cliente {
         this.dni = dni;
     }
 
-    public boolean isVip() {
-        return vip;
-    }
-
-    public void setVip(boolean vip) {
-        this.vip = vip;
-    }
-
-    public boolean isCapital() {
-        return capital;
-    }
-
-    public void setCapital(boolean capital) {
-        this.capital = capital;
-    }
-
     public List<Cuenta> getCuentas() {
         return cuentas;
     }
@@ -78,6 +58,7 @@ public class Cliente {
         this.pin = pin;
     }
 
+
     /**
      * Asocia una cuenta al cliente
      * @param cuenta Cuenta a asignar
@@ -85,6 +66,7 @@ public class Cliente {
     public void agregarCuenta(Cuenta cuenta){
         getCuentas().add(cuenta);
     }
+
 
     /**
      * Elimina una de las cuentas del cliente
@@ -96,5 +78,14 @@ public class Cliente {
                 getCuentas().remove(i);
             }
         }
+    }
+
+
+    /**
+     * Paga cualquier operacion realizada en un banco
+     * @param cuenta Cuenta de la que se descuenta el monto de la operacion
+     */
+    public void pagarOperacion(Cuenta cuenta){
+        cuenta.setSaldo(cuenta.getSaldo() - 6);
     }
 }

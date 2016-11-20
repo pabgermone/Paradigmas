@@ -16,7 +16,7 @@ public class ClienteTest {
     @Before
     public void setUp() throws Exception {
         banco = new Banco();
-        cliente = new Cliente("Pablo", "Germone", 123, false, false, banco);
+        cliente = new Cliente("Pablo", "Germone", 123, banco);
         cuenta = new Cuenta(123, cliente, banco);
     }
 
@@ -30,6 +30,14 @@ public class ClienteTest {
         cliente.eliminarCuenta(cuenta);
 
         assertEquals(cliente.getCuentas().size(), 0);
+    }
+
+    @Test
+    public void pagarOperacion() throws Exception{
+        cuenta.setSaldo(10);
+        cliente.pagarOperacion(cuenta);
+
+        assertTrue(cliente.getCuentas().get(0).getSaldo() == 4);
     }
 
 }

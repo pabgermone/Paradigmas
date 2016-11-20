@@ -16,7 +16,7 @@ public class BancoTest {
     @Before
     public void setUp() throws Exception {
         banco = new Banco();
-        cliente = new Cliente("Pablo", "Germone", 123, false, false, banco);
+        cliente = new Cliente("Pablo", "Germone", 123, banco);
         cuenta = new Cuenta(123, cliente, banco);
     }
 

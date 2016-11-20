@@ -94,13 +94,7 @@ public class Banco {
      * @param cuenta Cuenta en la que hay que cobrar
      */
     private void cobrar(Cuenta cuenta){
-        Cliente propietario = cuenta.getPropietario();
-
-        if(propietario.isVip() && propietario.isCapital()){
-            cuenta.setSaldo(cuenta.getSaldo() - 2);
-        }else if(!propietario.isVip()){
-            cuenta.setSaldo(cuenta.getSaldo() - 6);
-        }
+        cuenta.getPropietario().pagarOperacion(cuenta);
     }
 
     /**
@@ -124,13 +118,5 @@ public class Banco {
      */
     public void cambiarPin(Cliente cliente, int pin){
         cliente.setPin(pin);
-    }
-
-    /**
-     * Hace VIP a un cliente
-     * @param cliente Cliente al que se quiere hacer VIP
-     */
-    public void hacerVip(Cliente cliente){
-        cliente.setVip(true);
     }
 }
